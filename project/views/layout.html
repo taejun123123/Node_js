@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/main.css">
+  <style>
+    /* 기본 카카오톡 스타일 */
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+    }
+    .navbar {
+      background-color: #ffeb3b;
+      border-bottom: 1px solid #ddd;
+    }
+    .navbar h1 {
+      font-size: 1.5rem;
+      color: #333;
+      text-align: center;
+      margin: 0;
+    }
+    .content-wrapper {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 768px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+   
+    .chat-form {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 쌓이게 함 */
+}
+
+.input-gif {
+  max-width: 150px; /* GIF 입력 필드의 최대 너비를 설정 */
+}
+
+.input-chat {
+  margin: 0 10px; /* 좌우 여백 */
+}
+
+.btn-submit {
+  /* 버튼 크기 조정 */
+  min-width: 80px; /* 최소 너비 설정 */
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- 카카오톡 느낌의 상단 바 -->
+  <nav class="navbar">
+    <h1>{{title}}</h1>
+  </nav>
+
+  <div class="content-wrapper">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    © 2024 랜덤 채팅방
+  </footer>
+
+  <!-- Bootstrap 4 JS와 의존성 추가 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  {% block script %}
+  {% endblock %}
+</body>
+</html>
